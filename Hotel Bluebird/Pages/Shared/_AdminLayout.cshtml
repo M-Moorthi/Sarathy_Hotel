@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link href="~/css/Admindash.css" rel="stylesheet" />
+
+    <!--Fontawesome-->
+    <script src="https://kit.fontawesome.com/9e6d3f1177.js" crossorigin="anonymous"></script>
+    <!--Bootstrap Css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar p-0">
+            <h2>Admin</h2>
+            <ul class="p-0">
+                <li><a href="/Login/Home"><i class="fa-solid fa-circle-plus"></i> Home</a></li>
+                <li><a href="/Admin/Booknow"><i class="fa-solid fa-circle-plus"></i> BookNow</a></li>
+                <li><a href="/Admin/Customer"><i class="fa-solid fa-circle-plus"></i> Customer </a></li>
+                <li><a href="/Admin/Feedback"><i class="fa-solid fa-circle-plus"></i> Feedback </a></li>
+
+                <li><a href="/Login/Index"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+            </ul>
+            <div class="toggle-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="main_content" id="maincontent">
+            <div class="container m-5">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script>
+        const toggleBtn = document.querySelector('.toggle-btn');
+        const sidebar = document.querySelector('.sidebar');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

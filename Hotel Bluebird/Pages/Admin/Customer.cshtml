@@ -1,0 +1,44 @@
+﻿@page
+@model Hotel_Bluebird.Pages.Admin.CustomerModel
+@{
+}
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<br />
+<h5>List Of Customer</h5>
+<a class="btn btn-primary btn-sm" href="/Admin/AddCustomer">Add</a>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.list)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Gender</td>
+                <td>@item.Phone</td>
+                <td>@item.Email</td>
+                <td>@item.Address</td>
+                <td>@item.Date</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Admin/EditCustomer?Id=@item.Id">Edit</a>
+                    <a class="btn btn-warning btn-sm" href="/Admin/DelCustomer?Id=@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

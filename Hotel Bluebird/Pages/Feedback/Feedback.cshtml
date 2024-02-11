@@ -1,0 +1,29 @@
+﻿@page
+@model Hotel_Bluebird.Pages.Feedback.FeedbackModel
+@{
+}
+<br />
+<h5>Feedback</h5>
+
+<div class="container">
+    @foreach (var item in Model.list)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-6">
+                <h5>@item.Name</h5>
+            </div>
+
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-6">
+                <h6>@item.Email</h6>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-6">
+                <p>@item.Message</p>
+            </div>
+        </div>
+      
+    }
+</div>

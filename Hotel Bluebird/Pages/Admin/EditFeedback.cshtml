@@ -1,0 +1,54 @@
+﻿@page
+@model Hotel_Bluebird.Pages.Admin.EditFeedbackModel
+@{
+}
+@{
+    Layout = "_AdminLayout";
+}
+<br />
+<h5>Edit Feedback</h5>
+
+<form method="post">
+    @if (Model.errorMessage.Length > 0)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>@Model.errorMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>@Model.successMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <input type="hidden" name="id" value="@Model.feedInfo.Id" />
+
+    <div class="row mb-3">
+        <label class="col-sm-6 col-from-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.feedInfo.Id" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-6 col-from-label">Email</label>
+        <div class="col-sm-6">
+            <input type="email" class="form-control" name="email" value="@Model.feedInfo.Id" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-6 col-from-label">Email</label>
+        <div class="col-sm-6">
+            <textarea class="form-control" name="message" value="@Model.feedInfo.Id"></textarea>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="offset-col-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <button class="btn btn-outline-primary" href="/" role="button">Cancel</button>
+        </div>
+    </div>
+</form>

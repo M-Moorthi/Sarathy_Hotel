@@ -1,0 +1,40 @@
+﻿@page
+@model Hotel_Bluebird.Pages.Admin.BooknowModel;
+@{
+    Layout = "_AdminLayout";
+}
+
+<br />
+<h5>List Of Booking</h5>
+<a class="btn btn-primary btn-sm" href="/Admin/AddBooking">Add</a>
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>CheckIn</th>
+            <th>CheckOut</th>
+            <th>Adult</th>
+            <th>Child</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.list)
+        {
+            <tr>
+                <td>@item.Id</td>
+                
+                <td>@item.CheckIn</td>
+                <td>@item.CheckOut</td>
+                <td>@item.Adult</td>
+                <td>@item.Child</td>
+                <td>@item.Date</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Admin/Edit_Booking?Id=@item.Id">Edit</a>
+                    <a class="btn btn-warning btn-sm" href="/Admin/Del_Booking?Id=@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

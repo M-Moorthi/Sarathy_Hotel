@@ -1,0 +1,70 @@
+﻿@page
+@model Hotel_Bluebird.Pages.Admin.AddBookingModel
+@{
+    Layout = "_AdminLayout";
+}
+<br />
+<h5>New Booking</h5>
+
+<form method="post">
+    @if (Model.errorMessage.Length > 0)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>@Model.errorMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>@Model.successMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+  
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Check-in</label>
+        <div class="col-sm-3">
+            <input type="date" class="form-control" name="checkin" value="@Model.bookingInfo.CheckIn">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Check-out</label>
+        <div class="col-sm-3">
+            <input type="date" class="form-control" name="checkout" value="@Model.bookingInfo.CheckOut">
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Adult</label>
+        <div class="col-sm-3">
+            <select class="form-select" name="adult" value="@Model.bookingInfo.Adult">
+
+                <option value="One">One</option>
+                <option value="Two">Two</option>
+                <option value="Three">Three</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Children</label>
+        <div class="col-sm-3">
+            <select class="form-select" name="child" value="@Model.bookingInfo.Child">
+
+                <option value="One">One</option>
+                <option value="Two">Two</option>
+                <option value="Three">Three</option>
+            </select>
+        </div>
+
+    </div>
+        <div class="row mb-3">
+            <div class="offset-col-3 col-sm-3 d-grid">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-sm-3 d-grid">
+                <button class="btn btn-outline-primary" href="/" role="button">Cancel</button>
+            </div>
+        </div>
+</form>

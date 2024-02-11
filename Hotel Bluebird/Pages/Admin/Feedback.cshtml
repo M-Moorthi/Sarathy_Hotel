@@ -1,0 +1,39 @@
+﻿@page
+@model Hotel_Bluebird.Pages.Admin.FeedbackModel
+@{
+    Layout = "_AdminLayout";
+}
+<br />
+<h5>List of Feedback</h5>
+<a class="btn btn-primary btn-sm" href="/Admin/AddFeedback">Add</a>
+
+<div class="container">
+   @foreach (var item in Model.list)
+   {
+       <div class="row mb-3">
+            <div class="col-sm-6">
+                <h5>@item.Name</h5>
+            </div>
+
+       </div>
+       <div class="row mb-3">
+            <div class="col-sm-6">
+                <h6>@item.Email</h6>
+            </div>
+        </div>
+       <div class="row mb-3">
+           <div class="col-sm-6">
+                <p>@item.Message</p>
+           </div>
+       </div>
+       <div class="row mb-3">
+           <div class="offset-col-3 col-sm-3 d-grid">
+                <a class="btn btn-primary btn-sm" href="/Admin/EditFeedback?Id=@item.Id">Edit</a>
+
+           </div>
+           <div class="col-sm-3 d-grid">
+           <a class="btn btn-warning btn-sm" href="/Admin/DelFeedback?Id=@item.Id">Delete</a>
+           </div>
+       </div>
+   }    
+</div>

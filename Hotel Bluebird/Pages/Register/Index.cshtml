@@ -1,0 +1,55 @@
+﻿@page
+@model Hotel_Bluebird.Pages.Register.IndexModel
+@{
+}
+<form method="post">
+   
+
+        <div class="container-fluid m-5">
+            <div class="row">
+               <div class="offset-sm-3 col-sm-6 my-5 p-5 shadow">
+                    @if (Model.errorMessage.Length > 0)
+                    {
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>@Model.errorMessage</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+                    @if (Model.successMessage.Length > 0)
+                    {
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>@Model.successMessage</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+                    <div class="header">
+                        <h5 class="title d-flex align-items-center"><i class="bi bi-person-lines-fill fs-3 me-2"></i>User Registration</h5>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control shadow-none" name="name">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control shadow-none" name="email">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control shadow-none" name="password">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control shadow-none" name="cpassword">
+                    </div>
+
+                <div class="text-center mb-3">
+                    <button type="submit" class="btn btn-dark shadow-none">Register</button>
+                </div>
+
+                </div>
+               </div>
+        </div>
+    
+
+
+</form>
